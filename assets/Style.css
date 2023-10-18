@@ -175,6 +175,20 @@ header a img{
     background-color:#A3E0C8/*CAMBIAR COLOR*/
 }
 
+.btnActive{
+    font-weight: 900;
+    padding: 0.5rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color:#50d29e;
+    
+}
+
 
 /*----------- LIBROS ------------- */
 
@@ -247,6 +261,10 @@ header a img{
     font-size: 16px;
     font-weight: 900;
     background-color:#A3E0C8/*CAMBIAR COLOR*/
+}
+
+.hidden{
+    display: none;
 }
 
 

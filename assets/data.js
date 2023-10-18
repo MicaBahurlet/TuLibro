@@ -100,7 +100,10 @@ const DivideLibrosInParts = (size) => {
 // AppState
 
 const AppState = {
-    libros: DivideLibrosInParts(4),
+    libros: DivideLibrosInParts(4), // ver si después quiero sumas más Atención con usar : y no =
+    currentLibrosIndex: 0, // Quiero saber el índice actual del producto, el idice del array que dividí
+    librosLimit: DivideLibrosInParts(4).length, // me va a devolver el límite del array 
+    activeFilter: null, // en un inicio arranca null. 
 }
 
 console.log(AppState);
