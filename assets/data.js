@@ -106,4 +106,3 @@ const AppState = {
     activeFilter: null, // en un inicio arranca null. 
 }
 
-console.log(AppState);

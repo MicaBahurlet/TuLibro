@@ -21,6 +21,14 @@ const librosContainer = document.querySelector(".librosContainer");
 
 const btnVerMas = document.querySelector(".btnVerMas");
 
+// -------------- contenedor de categorias ------------ //
+
+const categoriesContainer = document.querySelector(".categorias");
+
+// -------------- Html collection------------ //
+
+const categoriesList = document.querySelectorAll(".category");
+
 // -------------- Function para crear el html dinámico de los libros ------------ //
 
 // También podría desestructurar para uno usar "libro.img"
@@ -60,13 +68,80 @@ const ShowMoreBooks = () => {
 }
 
 
+// Function para ocultar el btn Ver mas si no hay categoria seleccionada
 
+const setShowMoreVisibility = () => {
+    if(!AppState.activeFilter){
+        btnVerMas.classList.remove("hidden");
+    }
+    btnVerMas.classList.add("hidden");
+}
+
+
+
+
+
+//-------------- FILTROS -------------------------------------- //
+
+// Function para cambiar el estado de los botones de las categorias a active cuando selecciono
+const cambiarBtnEstadoActivo = (selectedCategory) => {
+    const categories = [...categoriesList];
+    
+
+    categories.forEach((categoryBtn) => {
+        if(categoryBtn.dataset.category !== selectedCategory){
+            categoryBtn.classList.remove("btnActive");
+            return
+        }
+        categoryBtn.classList.add("btnActive"); // al btn que no cumple esta condicion agregale la clase btnActive
+        
+    })
+}
+
+
+//Function para cambiar el estado de filtro activo
+const cambiarFiltroActivo = (btn) => {
+    AppState.activeFilter = btn.dataset.category;
+    cambiarBtnEstadoActivo(AppState.activeFilter);
+    setShowMoreVisibility(AppState.activeFilter);
+    
+}
+
+// Function Filtrar libros
+
+const renderFilteredBooks = () => {
+    const filteredBooks = librosData.filter(
+        (libro) => libro.category === AppState.activeFilter
+    );
+
+    renderLibros(filteredBooks);
+}
+
+// Function para aplicar filtro
+const appplyFilter = ({target}) => { //desestructurando la función del objeto dentro del parametro es más facil
+    if(!isInactiveFilterBtn(target)) return;
+    cambiarFiltroActivo(target);
+    librosContainer.innerHTML = ""; // vaciar el contenedor para que se vuelva a renderizar. 
+    if(AppState.activeFilter){
+        renderFilteredBooks()
+        AppState.currentLibrosIndex = 0;
+        return;
+    }
+    renderLibros(AppState.libros[0]);
+    
+}
+
+// -------------- Function para saber si el elemento que aprieto contiene .category y no esta activo------------ //
+
+const isInactiveFilterBtn = (element) => {
+    return (element.classList.contains("category") && !element.classList.contains("btnActive"));
+}
 
 // -------------- Function innit------------ //
 const init = () => {
-    console.log(AppState.libros[0]);
     renderLibros(AppState.libros [0]);
     btnVerMas.addEventListener("click", ShowMoreBooks)
+    categoriesContainer.addEventListener("click", appplyFilter)
 };
 
 init();
