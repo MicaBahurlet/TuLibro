@@ -109,13 +109,13 @@ header a img{
     justify-content: center;
     align-items: center;
     background-color: #A3E0C8;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 2rem;
     gap: 1rem;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
 
 .cards img{
@@ -172,7 +172,7 @@ header a img{
     -o-border-radius: 10px;
     font-size: 16px;
     font-weight: 500;
-    background-color:#E9D8BE/*CAMBIAR COLOR*/
+    background-color:#A3E0C8/*CAMBIAR COLOR*/
 }
 
 
@@ -188,7 +188,7 @@ header a img{
     max-width: 1200px;
     gap: 2rem;
     margin-top: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     padding: 3rem;
 }
 
@@ -205,6 +205,15 @@ header a img{
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 1rem;
+    border-bottom: #A3E0C8 5px solid;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.libroCard:hover{
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
 .libroCard img{
@@ -217,6 +226,27 @@ header a img{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+
+/*----------- BTN - VER MÁS------------- */
+
+#BTNVerMas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnVerMas{
+    width: 9rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 16px;
+    font-weight: 900;
+    background-color:#A3E0C8/*CAMBIAR COLOR*/
 }
 
 

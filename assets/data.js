@@ -61,5 +61,46 @@ const librosData =[
         bid: 7.000,
         category: "Clásicos",
         img: "./img/Ensayo.png",
-    }
+    },
+    {
+        id: 10,
+        name: "Hábitos Atómicos",
+        bid: 8.00,
+        category: "Crecimiento",
+        img: "./img/HabitosAtomicos.png",
+    },
+    {
+        id: 11,
+        name: "Nuestra parte de noche",
+        bid: 5.89,
+        category: "Ficción",
+        img: "./img/NuestraParteDeNoche.png",
+    },
+    {
+        id: 12,
+        name: "El Principito",
+        bid: 6.00,
+        category: "Clásicos",
+        img: "./img/ElPrincipito.png",
+    },
 ]
+
+// Quiero dividir de a 4 
+
+const DivideLibrosInParts = (size) => {
+    let librosListados = [];
+
+    for (let i=0; i < librosData.length; i+=size) {
+        librosListados.push(librosData.slice(i, i+size)); // de 0 a lo que yo quiero
+    }
+    return librosListados;
+    
+}
+
+// AppState
+
+const AppState = {
+    libros: DivideLibrosInParts(4),
+}
+
+console.log(AppState);

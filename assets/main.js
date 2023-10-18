@@ -17,7 +17,11 @@ cerrar.addEventListener("click", () => {
 
 const librosContainer = document.querySelector(".librosContainer");
 
-// -------------- Function para crear el html de los libros ------------ //
+// -------------- Function para crear el html dinámico de los libros ------------ //
+
+// También podría desestructurar para uno usar "libro.img"
+
+// AGREGAR DATA-SET AL BUTTON 
 
 createProductTemplate = (libro) => {
     return `
@@ -27,8 +31,7 @@ createProductTemplate = (libro) => {
             <p>${libro.bid}€</p>
             <button class="btn-categoria">Comprar</button>
         </div>
-    `
-    
+    ` 
 }
 
 // -------------- Function renderLibros ------------ //
@@ -40,7 +43,8 @@ const renderLibros = (librosList) => {
 
 // -------------- Function innit------------ //
 const init = () => {
-    renderLibros(librosData);
+    console.log(AppState.libros[0]);
+    renderLibros(AppState.libros [0]);
 };
 
 init();
