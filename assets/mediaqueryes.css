@@ -36,6 +36,77 @@
     align-items: end;
    }
 
+   #Hero{
+       flex-direction: column-reverse;
+       justify-content: center;
+       width: 100%;
+       height: auto;
+       max-width: 400px;
+       gap: 2px;
+   }
+
+   #Hero .textHero{
+       width: 100%;
+       height: auto;
+       max-width: 300px;
+       text-align: center;
+       align-items: center;
+    }
+
+    #Hero .textHero h1{
+        margin-top: 2rem;
+        font-size: 40px;
+    }
+
+    #Hero .textHero h2{
+        font-size: 25px;
+    }
    
+    #Hero .textHero h3{
+        font-size: 18px;
+    }
+
+   #cardsBeneficios{
+       flex-direction: column;
+       width: 100%;
+       height: auto;
+       max-width: 400px;
+   }
+
+   #cardsBeneficios .cards{
+       margin: 0 auto;
+       width: 100%;
+       height: auto;
+       max-width: 330px;
+       text-align: center;
+   }
+
+   #LibrosDisponibles{
+       flex-direction: column;
+   }
+
+   #LibrosDisponibles p{
+    text-align: center;
+     width: 100%;
+     height: auto;
+     max-width: 300px;
+     margin: 0 auto;
+   }
+
+   #LibrosDisponibles .categorias{
+       flex-direction: column;
+       
+   }
+
+   #Contacto{
+       flex-direction: column;
+       width: 100%;
+       height: auto;
+       max-width: 300px;
+       margin: 0 auto;
+    }
+    footer{
+        flex-direction: column;
+    }
    
 }

@@ -41,7 +41,7 @@ createProductTemplate = (libro) => {
             <img src="${libro.img}" alt="${libro.name}">
             <h3>${libro.name}</h3>
             <p>${libro.bid}€</p>
-            <button class="btn-categoria">Comprar</button>
+            <button class="category">Comprar</button>
         </div>
     ` 
 }

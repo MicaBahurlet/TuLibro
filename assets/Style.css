@@ -258,6 +258,7 @@ header a img{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 3rem;
 }
 
 .btnVerMas{
@@ -287,7 +288,7 @@ header a img{
     align-items: stretch;
     gap: 4rem;
     margin-top: 6rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 #Contacto .Formulario .inputGroup{
@@ -302,6 +303,7 @@ header a img{
 }
 
 #Contacto img{
+    margin-top: 2rem;
     width: 100%;
     height: auto;
     max-width: 400px;
@@ -310,6 +312,28 @@ header a img{
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
+}
+
+#Contacto .inputGroup input{
+    padding: 1rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#Contacto .inputGroup .Mensaje{ 
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+}
+
+#Contacto img{
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    margin-bottom: 2rem;
 }
 
 
