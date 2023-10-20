@@ -6,7 +6,8 @@
 }
 
 body{
-    background-color: #FCFAF7
+    background-color: #FCFAF7;
+    overflow-x: hidden; /* Para que no me genere un scroll horizontal el carrito.*/
 }
 
 header{
@@ -58,24 +59,28 @@ header a img{
 }
 
 
+
 /*----------- CART ------------- */
+
+
 
 .cartIcon{
     cursor: pointer;
     width: 40px;
-    display: flex;
+    display: inline-block;
+    z-index: 4;
    
     
 }
 
 .cartBurbuja {
-  font-weight: 600;
-  border-radius: 10px;
-  font-size: 18px;
-  margin-right: 1rem;
-  color: var(--text-white);
-  cursor: pointer;
-  position: relative;
+    font-weight: 600;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-right: 1rem;
+    color: var(--text-white);
+    cursor: pointer;
+    position: relative;
 }
 
 .cartIndicadorBurbuja{
@@ -113,19 +118,55 @@ header a img{
     transform: translate(200%);
     transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
-  
+
 .cart-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-  
+
+.cart::-webkit-scrollbar {
+    display: none;
+}
+
+.divider {
+    margin-top: 20px;
+    border: 0.5px solid var(--electric);
+    width: 100%;
+}
+
 .cart-total {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     width: 100%;
 }
+
+.btn-comprar{
+    padding: 0.5rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color:#A3E0C8
+}
+
+.btn-delete{
+    padding: 0.5rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color:#A3E0C8
+}
+
+
 
 .abrirCarrito{
     transform: translate(0%);
@@ -140,20 +181,27 @@ header a img{
     margin-top: 5.8rem;
 }
 
-.overlay {
-    position: absolute;
-    top: 65px;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 1; 
-    /*Efecto de Glassmorphismo*/
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    display: none;
-}
+
+
+
+/*.overlay {
+/*    position: absolute;
+/*    top: 65px;
+/*    left: 0;
+/*    height: 100vh;
+/*    width: 100%;
+/*    z-index: 1; 
+/*    /*Efecto de Glassmorphismo*/
+/*    background: rgba(255, 255, 255, 0.05);
+/*    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+/*    backdrop-filter: blur(5px);
+/*    -webkit-backdrop-filter: blur(5px);
+/*    display: none;
+/*}
+/*
+/*.show-overlay {
+/*    display: block;
+/*  }
 
 /*----------- HERO ------------- */
 
@@ -270,6 +318,18 @@ header a img{
 }
 
 .category{
+    padding: 0.5rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color:#A3E0C8
+}
+
+.btnComprarLibro{
     padding: 0.5rem;
     border-radius: 10px;
     -webkit-border-radius: 10px;

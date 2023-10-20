@@ -35,7 +35,20 @@ const carritoBtn = document.querySelector(".cartIcon");
 
 const cartLibros = document.querySelector(".cart");
 
-const overlay = document.querySelector(".overlay");
+
+//--------------- html colection para agregar al carrito -----------------------//
+
+const cartBurbuja = document.querySelector(".cartIndicadorBurbuja"); // el número de la burbuja
+
+const total = document.querySelector(".total"); // total precio
+
+const btnComprar = document.querySelector(".btn-comprar"); // btn comprar
+
+const btnDelete = document.querySelector(".btn-delete"); // btn vaciar carrito
+
+const librosCart = document.querySelector(".cart-container"); // contenedor de carrito
+
+const cart = []; // array vacio del carrito para guardar los libros comprados. 
 
 
 
@@ -54,7 +67,7 @@ createProductTemplate = (libro) => {
             <img src="${libro.img}" alt="${libro.name}">
             <h3>${libro.name}</h3>
             <p>${libro.bid}€</p>
-            <button class="category">Comprar</button>
+            <button class="btnComprarLibro">Comprar</button>
         </div>
     ` 
 }
@@ -153,11 +166,18 @@ const isInactiveFilterBtn = (element) => {
 // -------------- Function para mostrar el carrito ------------ //
 
 const MostrarCarrito = () => {
-    cartLibros.classList.toggle("abrirCarrito");
+    cartLibros.classList.toggle("abrirCarrito"); // toggle para que se prenda y se apague/// NO LLEVA .
+    // acá después podría traer un overlay para un lindo efecto al abir el carrito. 
 };
 
 
+// -------------- lógica agregar productos ------------ //
 
+// Functiom para agregar libro al carrito
+
+const agregarLibros = (e) =>{
+  console.log (e.target);
+}
 
 // -------------- Function innit------------ //
 const init = () => {
@@ -165,6 +185,8 @@ const init = () => {
     btnVerMas.addEventListener("click", ShowMoreBooks)
     categoriesContainer.addEventListener("click", appplyFilter)
     carritoBtn.addEventListener("click", MostrarCarrito)
+
+    librosCart.addEventListener("click", agregarLibros)
 
 };
 
