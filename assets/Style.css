@@ -11,7 +11,7 @@ body{
 
 header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center; 
     background: rgba( 204, 200, 200, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -20,6 +20,7 @@ header{
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 1rem;
+    z-index: 2;
 }
 
 header a img{
@@ -32,9 +33,16 @@ header a img{
     display: none;
 }
 
+#NavBar{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
 #NavBar .navList{
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 3rem;
     font-size: 18px;
     font-weight: 600;
@@ -47,6 +55,104 @@ header a img{
 
 #NavBar .navList a:hover{
     font-weight: 900;
+}
+
+
+/*----------- CART ------------- */
+
+.cartIcon{
+    cursor: pointer;
+    width: 40px;
+    display: flex;
+   
+    
+}
+
+.cartBurbuja {
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-right: 1rem;
+  color: var(--text-white);
+  cursor: pointer;
+  position: relative;
+}
+
+.cartIndicadorBurbuja{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    text-align: center;
+    background: #A3E0C8;
+    color: black;
+    font-size: 10px;
+    font-weight: 500;
+    height: 18px;
+    width: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1px;
+    border-radius: 50%;
+}
+
+.cart {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    padding: 50px 30px;
+    background: linear-gradient(to top, #121e3c, var(--background));
+    border-left: 1px solid var(--nav-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+    z-index: 2;
+    min-width: 375px;
+    transform: translate(200%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+  
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+  
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+
+.abrirCarrito{
+    transform: translate(0%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+    z-index: 3;
+    background: rgba( 204, 200, 209, 4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin-top: 5.8rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1; 
+    /*Efecto de Glassmorphismo*/
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
 }
 
 /*----------- HERO ------------- */

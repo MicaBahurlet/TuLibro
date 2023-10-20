@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/Libro.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./assets/Style.css">
     <link rel="stylesheet" href="./assets/mediaqueryes.css">
     <title>Tu Libro | Comprá libros online </title>
@@ -24,9 +31,33 @@
                 <li><a href="#"> Beneficios </a></li>
                 <li><a href="#">Libros disponibles</a></li>
                 <li><a href="#">Contacto</a></li>
-                <li><a href="#"><i class="bi bi-cart2"></i></a></li> <!--Hacer + grande-->
-
             </ul>
+
+            <!--CARRITO-->
+            <div class="cartIcon">
+                <i class="fa-solid fa-cart-shopping cartBurbuja">
+                  <div class="cartIndicadorBurbuja">0</div>
+                </i>
+            </div>
+      
+            <div class="cart">
+                <h2>Libros en el carrito: </h2>
+      
+                <div class="cart-container"></div>
+      
+                <span class="divider"></span>
+      
+                <div class="cart-total">
+                  <p>Total:</p>
+                  <span class="total">acá va a ir el precio del pedido</span>
+                </div>
+                <button class="category">Comprar</button>
+                <button class="category">Vaciar carrito</button>
+            </div>
+      
+            <div class="overlay"></div>
+
+
         </nav>
     </header>
 

@@ -29,6 +29,19 @@ const categoriesContainer = document.querySelector(".categorias");
 
 const categoriesList = document.querySelectorAll(".category");
 
+// -------------- Carrito   ------------ //
+
+const carritoBtn = document.querySelector(".cartIcon"); 
+
+const cartLibros = document.querySelector(".cart");
+
+const overlay = document.querySelector(".overlay");
+
+
+
+
+
+
 // -------------- Function para crear el html dinámico de los libros ------------ //
 
 // También podría desestructurar para uno usar "libro.img"
@@ -137,11 +150,22 @@ const isInactiveFilterBtn = (element) => {
     return (element.classList.contains("category") && !element.classList.contains("btnActive"));
 }
 
+// -------------- Function para mostrar el carrito ------------ //
+
+const MostrarCarrito = () => {
+    cartLibros.classList.toggle("abrirCarrito");
+};
+
+
+
+
 // -------------- Function innit------------ //
 const init = () => {
     renderLibros(AppState.libros [0]);
     btnVerMas.addEventListener("click", ShowMoreBooks)
     categoriesContainer.addEventListener("click", appplyFilter)
+    carritoBtn.addEventListener("click", MostrarCarrito)
+
 };
 
 init();
