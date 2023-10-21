@@ -347,16 +347,25 @@ const handleQuantity= (e) =>{
 // -------------- Comprar carrito  ------------ //
 // -------------- Comprar carrito ------------ //
 
+const resetCarritoLibros = () =>{
+    cart = [];
+    updateCartState();
+}
+
+const completeCartAction = (confirmarMensaje, successMensaje) =>{
+    if(!cart.length) return
+    if(window.confirm(confirmarMensaje)){
+        resetCarritoLibros(); 
+        alert(successMensaje);
+    }
+}
+
 const completarCompra = () =>{
     
 }
 
 const vaciarCarrito = () =>{
-    if(!cart.length) return
-    if(window.confirm("¿Queres vaciar el carrito?")){
-        cart = [];
-        updateCartState();
-    }
+    completeCartAction ("¿Seguro queres vaciar el carrito?", "Tu carrito está vacío.");
 }
 
 
