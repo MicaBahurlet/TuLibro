@@ -208,7 +208,7 @@ const createCartLibroTemplate =  (cartLibro) =>{
 // render carrito
 const renderCart = () => {
     if (!cart.length){
-        librosCart.innerHTML = `<p class="emptyCart">COMPARLOOO!</p>`;
+        librosCart.innerHTML = `<p class="emptyCart">Agregá un libro para comenzar con tu compra.</p>`;
         return;
     }
 
@@ -264,7 +264,7 @@ const agregarLibros = (e) =>{
     }
   
     updateCartState();
-    console.log(cart);
+    
 }
 
 
@@ -307,11 +307,44 @@ const handleMasBtn = (id) => {
     }
 }
 
+// funcion para restar libro -
+
+const handlemenosBtn = (id) => {
+    const existingLibro = cart.find((libro) => libro.id === id);
+
+    if (existingLibro.quantity === 1){
+        if(window.confirm("¿Queres eliminar éste libro?")){
+            removeLibroFromCart(existingLibro);
+        }
+        return; 
+       
+    }
+
+    subtractLibro(existingLibro);
+}
+
+const subtractLibro= (existingLibro) =>{
+    
+    cart = cart.map ((libro) =>{
+        return libro.id === existingLibro.id // acá estaba el bug, yo tengo que comparar cosas iguales 
+        ? {...libro, quantity: libro.quantity - 1}
+        : libro
+    })
+}
+
+const removeLibroFromCart = (existingLibro) =>{
+    cart = cart.filter((libro) => libro.id !== existingLibro.id);
+    updateCartState();
+}
+
+
+// funcion del handle del carrito
+
 const handleQuantity= (e) =>{
     if(e.target.classList.contains("mas")){
         handleMasBtn(e.target.dataset.id);
     }else if (e.target.classList.contains("menos")){
-        console.log ("holAAA")
+        handlemenosBtn(e.target.dataset.id);
 
     }
     updateCartState();
