@@ -51,7 +51,8 @@ const librosCart = document.querySelector(".cart-container"); // contenedor de c
 const successModal = document.querySelector(".addModal"); // mensaje que agregue al carrito
 
 
-
+// -------------- Function para el LS ------------ //
+// -------------- Function para el LS ------------ //
 
 let cart = JSON.parse(localStorage.getItem("cart")) || []; // 1° ARRAY VACIO, cuando seteé el JS, necesito decirle que pase de lo que hay en el Ls de csrt O sino array vacío
 // funcion para setear el LS
@@ -60,14 +61,8 @@ const saveCart = () => {
 }
 
 
-
-
 // -------------- Function para crear el html dinámico de los libros ------------ //
-
-// También podría desestructurar para uno usar "libro.img"
-
-// AGREGAR DATA-SET AL BUTTON 
-
+// -------------- Function para crear el html dinámico de los libros ------------ //
 createProductTemplate = (libro) => {
     return `
         <div class="libroCard">
@@ -114,9 +109,6 @@ const setShowMoreVisibility = () => {
     }
     btnVerMas.classList.add("hidden");
 }
-
-
-
 
 
 //-------------- FILTROS -------------------------------------- //
@@ -196,7 +188,7 @@ const createCartLibroTemplate =  (cartLibro) =>{
             <img src="${img}" alt="${name}">
             <div class="item-info">
                 <h3 class="item-title">${name}</h3>
-                <p class="item-bid">${bid}€</p>
+                <p class="item-bid">$${bid}</p>
             </div>
             <div class="item-handler">
             <span class="quantity-handler menos" data-id="${id}">-</span>
@@ -226,7 +218,7 @@ const getTotalCart = () => {
 
 // function para mostrar el total
 const mostrarTotal = () => {
-    total.innerHTML = `${getTotalCart().toFixed(2)} USD`; // despues cambiar la moneda si es que quiero
+    total.innerHTML = `${getTotalCart().toFixed(2)} ARS`; // despues cambiar la moneda si es que quiero
 }
 
 // function sumar en la burbuja
