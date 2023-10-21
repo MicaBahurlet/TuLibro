@@ -78,7 +78,7 @@ header a img{
     border-radius: 10px;
     font-size: 18px;
     margin-right: 1rem;
-    color: var(--text-white);
+    color: black;
     cursor: pointer;
     position: relative;
 }
@@ -106,8 +106,8 @@ header a img{
     top: 65px;
     right: 0;
     padding: 50px 30px;
-    background: linear-gradient(to top, #121e3c, var(--background));
-    border-left: 1px solid var(--nav-bg);
+    background: linear-gradient(to top, #121e3c);
+    border-left: 1px solid black;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -131,7 +131,7 @@ header a img{
 
 .divider {
     margin-top: 20px;
-    border: 0.5px solid var(--electric);
+    border: 0.5px solid black;
     width: 100%;
 }
 
@@ -151,7 +151,7 @@ header a img{
     -o-border-radius: 10px;
     font-size: 16px;
     font-weight: 500;
-    background-color:#A3E0C8
+    background-color:#A3E0C8; //* VER COLOR*/
 }
 
 .btn-delete{
@@ -163,7 +163,8 @@ header a img{
     -o-border-radius: 10px;
     font-size: 16px;
     font-weight: 500;
-    background-color:#A3E0C8
+    background-color: whitesmoke; //* VER COLOR*/
+
 }
 
 
@@ -181,6 +182,82 @@ header a img{
     margin-top: 5.8rem;
 }
 
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #2323234e; /* ver éste color*/
+    padding: 20px;
+    border: 1px solid black; 
+    border-radius: 10px;
+}
+  
+.cart-item img {
+    width: 100%;
+    height: auto;
+    max-width: 40px;
+}
+  
+.item-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 110px;
+}
+  
+.item-title {
+    color: black;
+    font-weight: 600;
+    font-size: 14px;
+}
+  
+.item-bid {
+    margin-top: 1rem;
+    color: black;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+/*.item-price {
+/*    background: linear-gradient(to right, #30cfd0, #c43ad6);
+/*    background-clip: text;
+/*    color: red;
+/*    -webkit-background-clip: text;
+/*    font-size: 16px;
+/*    font-weight: 800;
+/*}*/
+  
+.item-handler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+  
+.quantity-handler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: black;
+    font-weight: 400;
+}
+  
+.item-quantity {
+    color: black;
+}
+  
+.mas {
+    border: 1px solid black;
+    cursor: pointer;
+}
+  
+.menos {
+    
+    border: 1px solid black;
+    cursor: pointer;
+}
 
 
 

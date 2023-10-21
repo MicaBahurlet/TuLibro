@@ -48,7 +48,10 @@ const btnDelete = document.querySelector(".btn-delete"); // btn vaciar carrito
 
 const librosCart = document.querySelector(".cart-container"); // contenedor de carrito
 
-const cart = []; // array vacio del carrito para guardar los libros comprados. 
+
+
+
+let cart = []; // array vacio del carrito para guardar los libros comprados. 
 
 
 
@@ -67,7 +70,12 @@ createProductTemplate = (libro) => {
             <img src="${libro.img}" alt="${libro.name}">
             <h3>${libro.name}</h3>
             <p>${libro.bid}€</p>
-            <button class="btnComprarLibro">Comprar</button>
+            <button class="btnComprarLibro"
+                data-id="${libro.id}"
+                data-name="${libro.name}"
+                data-bid="${libro.bid}"
+                data-img="${libro.img}"
+            >Comprar</button>
         </div>
     ` 
 }
@@ -173,10 +181,77 @@ const MostrarCarrito = () => {
 
 // -------------- lógica agregar productos ------------ //
 
+// crear template del libro en el cart
+
+const createCartLibroTemplate =  (cartLibro) =>{
+   const {id, name, bid, img, quantity} = cartLibro; // desestructurar ésta vez
+   
+    return `
+        <div class="cart-item">
+            <img src="${img}" alt="${name}">
+            <div class="item-info">
+                <h3 class="item-title">${name}</h3>
+                <p class="item-bid">${bid}€</p>
+            </div>
+            <div class="item-handler">
+                <span class="quantity-handler menos" data.id="${id}" >-</span>
+                <span class="item-quantity">${quantity}</span>
+                <span class="quantity-handler mas" data.id="${id}" >+</span>
+            </div>
+
+        </div>    
+    `
+}
+
+
+// render carrito
+const renderCart = () => {
+    if (!cart.length){
+        librosCart.innerHTML = `<p class="emptyCart">COMPARLOOO!</p>`;
+        return;
+    }
+
+    librosCart.innerHTML = cart.map(createCartLibroTemplate).join("");
+}
+
+
+
 // Functiom para agregar libro al carrito
 
 const agregarLibros = (e) =>{
-  console.log (e.target);
+  if (!e.target.classList.contains("btnComprarLibro")) return; 
+  const libros = e.target.dataset; //string del libro. 
+  
+  
+  if (siExisteLibro(libros.id)) {  // si el libro ya existe en el carrito sumale uno, sino, else, creame el libro. 
+        addLibroToCart(libros)
+    }else {
+        createCartLibro(libros);
+    }
+  
+    renderCart();
+
+    console.log(cart);
+}
+
+// function para agregar un libro al carrito
+const addLibroToCart = (libros) => {
+    cart = cart.map ((cartLibro) =>
+        cartLibro.id === libros.id ? {...cartLibro, quantity: cartLibro.quantity + 1} : cartLibro 
+    );
+}
+
+// function para verificar si el libro ya esta en el carrito
+
+const siExisteLibro = (libroId) => {
+    return cart.find ((libro) => libro.id === libroId);
+}
+
+
+// Function para crear un object con la info del libro
+
+const createCartLibro = (libros) =>{
+    cart = [...cart, {...libros, quantity: 1}]; 
 }
 
 // -------------- Function innit------------ //
@@ -186,7 +261,8 @@ const init = () => {
     categoriesContainer.addEventListener("click", appplyFilter)
     carritoBtn.addEventListener("click", MostrarCarrito)
 
-    librosCart.addEventListener("click", agregarLibros)
+    librosContainer.addEventListener("click", agregarLibros) // tengo que llamar a Libro container!
+    document.addEventListener("DOMContentLoaded", renderCart)
 
 };
 
