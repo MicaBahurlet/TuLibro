@@ -361,6 +361,7 @@ const completeCartAction = (confirmarMensaje, successMensaje) =>{
 }
 
 const completarCompra = () =>{
+    completeCartAction ("¿Deseas completar la compra?", "¡Gracias por elegirnos! TU LIBRO prontamente en tus manos.");
     
 }
 
