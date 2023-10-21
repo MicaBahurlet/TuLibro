@@ -179,7 +179,8 @@ const MostrarCarrito = () => {
 };
 
 
-// -------------- lógica agregar productos ------------ //
+// -------------- lógica agregar productos al carrito  ------------ //
+// -------------- lógica agregar productos al carrito  ------------ //
 
 // crear template del libro en el cart
 
@@ -203,7 +204,6 @@ const createCartLibroTemplate =  (cartLibro) =>{
     `
 }
 
-
 // render carrito
 const renderCart = () => {
     if (!cart.length){
@@ -214,7 +214,29 @@ const renderCart = () => {
     librosCart.innerHTML = cart.map(createCartLibroTemplate).join("");
 }
 
+// function para saber el total de la compra
+const getTotalCart = () => {
+    return cart.reduce( (total, libro) => total + Number(libro.bid)  * libro.quantity, 0); // inicio en 0  // acc: aumulador y cur: producto a recorrer
+}
 
+// function para mostrar el total
+const mostrarTotal = () => {
+    total.innerHTML = `${getTotalCart().toFixed(2)} USD`; // despues cambiar la moneda si es que quiero
+}
+
+// function sumar en la burbuja
+const sumarBurbuja = () => { //reduce pero con acc y cur para acostumbrarme
+    cartBurbuja.textContent = cart.reduce( (acc, cur) => acc + cur.quantity, 0);
+}
+
+// function para quitar o sumar btn si no tengo o tengo libros en el carro 
+const quitarBtn = (btn) => {
+    if(!cart.length){
+        btn.classList.add("deshabilitar"); // si no tengo productos agregame .deshabilitar
+    }else{
+        btn.classList.remove("deshabilitar"); // si tengo productos quitame la class.
+    }
+}
 
 // Functiom para agregar libro al carrito
 
@@ -230,6 +252,10 @@ const agregarLibros = (e) =>{
     }
   
     renderCart();
+    mostrarTotal();
+    quitarBtn (btnDelete);
+    quitarBtn (btnComprar);
+    sumarBurbuja();
 
     console.log(cart);
 }
@@ -263,6 +289,9 @@ const init = () => {
 
     librosContainer.addEventListener("click", agregarLibros) // tengo que llamar a Libro container!
     document.addEventListener("DOMContentLoaded", renderCart)
+
+    quitarBtn (btnDelete); // ni bien cargue yo quiero deshabilitar los btn porque se supone que no tengo nada en el cart
+    quitarBtn (btnComprar);
 
 };
 

@@ -13,21 +13,27 @@ body{
 header{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    height: 80px;
     align-items: center; 
+    position: fixed;
     background: rgba( 204, 200, 200, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    padding: 1rem;
-    z-index: 2;
+    padding: 2rem;
+    z-index: 999;
+    
 }
 
 header a img{
     width: 100%;
     height: auto;
-    max-width: 250px;
+    max-width: 300px;
+    padding: 2rem;
+    margin-top: 1rem;
 }
 
 .abrir-menu, .cerrar-menu{
@@ -179,7 +185,7 @@ header a img{
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    margin-top: 5.8rem;
+    margin-top: 1rem;
 }
 
 .cart-item {
@@ -259,7 +265,12 @@ header a img{
     cursor: pointer;
 }
 
-
+.deshabilitar{
+    background-color: gray;
+    color: white;
+    cursor: not-allowed;
+    border: none;
+}
 
 /*.overlay {
 /*    position: absolute;
