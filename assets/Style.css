@@ -258,11 +258,19 @@ header a img{
     border: 1px solid black;
     cursor: pointer;
 }
+
+.mas:hover{
+    background-color: #A3E0C8; /* cambiar color*/
+}
   
 .menos {
     
     border: 1px solid black;
     cursor: pointer;
+}
+
+.menos:hover{
+    background-color: #A3E0C8; /* cambiar color*/
 }
 
 .deshabilitar{
@@ -324,6 +332,7 @@ header a img{
     width: 100%;
     height: auto;
     max-width: 400px;
+    margin-top: 4rem;
 }
 
 /*----------- BENEFICIOS ------------- */

@@ -69,7 +69,7 @@ createProductTemplate = (libro) => {
         <div class="libroCard">
             <img src="${libro.img}" alt="${libro.name}">
             <h3>${libro.name}</h3>
-            <p>${libro.bid}€</p>
+            <p>$${libro.bid}</p>
             <button class="btnComprarLibro"
                 data-id="${libro.id}"
                 data-name="${libro.name}"
@@ -195,10 +195,11 @@ const createCartLibroTemplate =  (cartLibro) =>{
                 <p class="item-bid">${bid}€</p>
             </div>
             <div class="item-handler">
-                <span class="quantity-handler menos" data.id="${id}" >-</span>
-                <span class="item-quantity">${quantity}</span>
-                <span class="quantity-handler mas" data.id="${id}" >+</span>
-            </div>
+            <span class="quantity-handler menos" data-id="${id}">-</span>
+            <span class="item-quantity">${quantity}</span>
+            <span class="quantity-handler mas" data-id="${id}">+</span>
+        </div>
+        
 
         </div>    
     `
@@ -238,12 +239,23 @@ const quitarBtn = (btn) => {
     }
 }
 
+// funcion para ejecutar fuctions del estado del carro
+
+const updateCartState = () => {
+    renderCart();
+    mostrarTotal();
+    sumarBurbuja();
+    quitarBtn (btnDelete);
+    quitarBtn (btnComprar);
+}
+
+
+
 // Functiom para agregar libro al carrito
 
 const agregarLibros = (e) =>{
   if (!e.target.classList.contains("btnComprarLibro")) return; 
-  const libros = e.target.dataset; //string del libro. 
-  
+  const libros = e.target.dataset; //string del libro.   
   
   if (siExisteLibro(libros.id)) {  // si el libro ya existe en el carrito sumale uno, sino, else, creame el libro. 
         addLibroToCart(libros)
@@ -251,21 +263,29 @@ const agregarLibros = (e) =>{
         createCartLibro(libros);
     }
   
-    renderCart();
-    mostrarTotal();
-    quitarBtn (btnDelete);
-    quitarBtn (btnComprar);
-    sumarBurbuja();
-
+    updateCartState();
     console.log(cart);
 }
 
+
 // function para agregar un libro al carrito
 const addLibroToCart = (libros) => {
-    cart = cart.map ((cartLibro) =>
-        cartLibro.id === libros.id ? {...cartLibro, quantity: cartLibro.quantity + 1} : cartLibro 
+    cart = cart.map((cartLibro) =>
+        cartLibro.id === libros.id
+            ? { ...cartLibro, quantity: cartLibro.quantity + 1 }
+            : cartLibro
     );
+    renderCart();
+    mostrarTotal();
+    sumarBurbuja();
 }
+
+//Antes tenía ésta fuction, pero no me tomaba el id 
+//const addLibroToCart = (libro) => {
+//    cart = cart.map ((cartLibro) =>
+//        cartLibro.id === libro.id ? {...cartLibro, quantity: cartLibro.quantity + 1} : cartLibro 
+//    );
+//}
 
 // function para verificar si el libro ya esta en el carrito
 
@@ -273,11 +293,28 @@ const siExisteLibro = (libroId) => {
     return cart.find ((libro) => libro.id === libroId);
 }
 
-
 // Function para crear un object con la info del libro
-
 const createCartLibro = (libros) =>{
     cart = [...cart, {...libros, quantity: 1}]; 
+}
+
+// function incrementar libro +
+
+const handleMasBtn = (id) => {
+    const existingLibro = cart.find((libro) => libro.id === id);
+    if (existingLibro) {
+        addLibroToCart(existingLibro);
+    }
+}
+
+const handleQuantity= (e) =>{
+    if(e.target.classList.contains("mas")){
+        handleMasBtn(e.target.dataset.id);
+    }else if (e.target.classList.contains("menos")){
+        console.log ("holAAA")
+
+    }
+    updateCartState();
 }
 
 // -------------- Function innit------------ //
@@ -288,6 +325,7 @@ const init = () => {
     carritoBtn.addEventListener("click", MostrarCarrito)
 
     librosContainer.addEventListener("click", agregarLibros) // tengo que llamar a Libro container!
+    librosCart.addEventListener("click", handleQuantity)
     document.addEventListener("DOMContentLoaded", renderCart)
 
     quitarBtn (btnDelete); // ni bien cargue yo quiero deshabilitar los btn porque se supone que no tengo nada en el cart
