@@ -249,8 +249,6 @@ const updateCartState = () => {
     quitarBtn (btnComprar);
 }
 
-
-
 // Functiom para agregar libro al carrito
 
 const agregarLibros = (e) =>{
@@ -308,7 +306,6 @@ const handleMasBtn = (id) => {
 }
 
 // funcion para restar libro -
-
 const handlemenosBtn = (id) => {
     const existingLibro = cart.find((libro) => libro.id === id);
 
@@ -316,15 +313,12 @@ const handlemenosBtn = (id) => {
         if(window.confirm("¿Queres eliminar éste libro?")){
             removeLibroFromCart(existingLibro);
         }
-        return; 
-       
+        return;  
     }
-
     subtractLibro(existingLibro);
 }
 
 const subtractLibro= (existingLibro) =>{
-    
     cart = cart.map ((libro) =>{
         return libro.id === existingLibro.id // acá estaba el bug, yo tengo que comparar cosas iguales 
         ? {...libro, quantity: libro.quantity - 1}
@@ -332,14 +326,14 @@ const subtractLibro= (existingLibro) =>{
     })
 }
 
+// funcion para remover un libro del carro 
 const removeLibroFromCart = (existingLibro) =>{
     cart = cart.filter((libro) => libro.id !== existingLibro.id);
     updateCartState();
 }
 
 
-// funcion del handle del carrito
-
+// funcion del handle del carrito, para manejar los libros
 const handleQuantity= (e) =>{
     if(e.target.classList.contains("mas")){
         handleMasBtn(e.target.dataset.id);
@@ -349,6 +343,23 @@ const handleQuantity= (e) =>{
     }
     updateCartState();
 }
+
+// -------------- Comprar carrito  ------------ //
+// -------------- Comprar carrito ------------ //
+
+const completarCompra = () =>{
+    
+}
+
+const vaciarCarrito = () =>{
+    if(!cart.length) return
+    if(window.confirm("¿Queres vaciar el carrito?")){
+        cart = [];
+        updateCartState();
+    }
+}
+
+
 
 // -------------- Function innit------------ //
 const init = () => {
@@ -360,6 +371,9 @@ const init = () => {
     librosContainer.addEventListener("click", agregarLibros) // tengo que llamar a Libro container!
     librosCart.addEventListener("click", handleQuantity)
     document.addEventListener("DOMContentLoaded", renderCart)
+
+    btnComprar.addEventListener("click", completarCompra)
+    btnDelete.addEventListener("click", vaciarCarrito)
 
     quitarBtn (btnDelete); // ni bien cargue yo quiero deshabilitar los btn porque se supone que no tengo nada en el cart
     quitarBtn (btnComprar);
