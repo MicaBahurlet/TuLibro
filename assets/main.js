@@ -53,9 +53,11 @@ const successModal = document.querySelector(".addModal"); // mensaje que agregue
 
 
 
-let cart = []; // array vacio del carrito para guardar los libros comprados. 
-
-
+let cart = JSON.parse(localStorage.getItem("cart")) || []; // 1° ARRAY VACIO, cuando seteé el JS, necesito decirle que pase de lo que hay en el Ls de csrt O sino array vacío
+// funcion para setear el LS
+const saveCart = () => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 
 
@@ -244,6 +246,7 @@ const quitarBtn = (btn) => {
 // funcion para ejecutar fuctions del estado del carro
 
 const updateCartState = () => {
+    saveCart();
     renderCart();
     mostrarTotal();
     sumarBurbuja();
@@ -281,13 +284,6 @@ const addLibroToCart = (libros) => {
     mostrarTotal();
     sumarBurbuja();
 }
-
-//Antes tenía ésta fuction, pero no me tomaba el id 
-//const addLibroToCart = (libro) => {
-//    cart = cart.map ((cartLibro) =>
-//        cartLibro.id === libro.id ? {...cartLibro, quantity: cartLibro.quantity + 1} : cartLibro 
-//    );
-//}
 
 // function para verificar si el libro ya esta en el carrito
 
@@ -402,7 +398,7 @@ const init = () => {
 
     quitarBtn (btnDelete); // ni bien cargue yo quiero deshabilitar los btn porque se supone que no tengo nada en el cart
     quitarBtn (btnComprar);
-
+    sumarBurbuja(cart); // para que el LS me renderice también la bubble del cart
 };
 
 init();
