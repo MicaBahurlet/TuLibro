@@ -48,6 +48,8 @@ const btnDelete = document.querySelector(".btn-delete"); // btn vaciar carrito
 
 const librosCart = document.querySelector(".cart-container"); // contenedor de carrito
 
+const successModal = document.querySelector(".addModal"); // mensaje que agregue al carrito
+
 
 
 
@@ -257,8 +259,10 @@ const agregarLibros = (e) =>{
   
   if (siExisteLibro(libros.id)) {  // si el libro ya existe en el carrito sumale uno, sino, else, creame el libro. 
         addLibroToCart(libros)
+        showMensajeModal("Se agregó una unidad del libro");
     }else {
         createCartLibro(libros);
+        showMensajeModal("¡Buena elección!, ¡Libro agregado al carrito!");
     }
   
     updateCartState();
@@ -295,6 +299,19 @@ const siExisteLibro = (libroId) => {
 const createCartLibro = (libros) =>{
     cart = [...cart, {...libros, quantity: 1}]; 
 }
+
+// function para mostrar mensaje después de sumar un libro al carrito
+
+const showMensajeModal = (mensaje)=>{
+    successModal.classList.add("activeModal");
+    successModal.textContent= mensaje;
+
+    setTimeout(()=>{
+        successModal.classList.remove("activeModal");
+    }, 2500);
+}
+
+
 
 // function incrementar libro +
 
@@ -368,8 +385,6 @@ const completarCompra = () =>{
 const vaciarCarrito = () =>{
     completeCartAction ("¿Seguro queres vaciar el carrito?", "Tu carrito está vacío.");
 }
-
-
 
 // -------------- Function innit------------ //
 const init = () => {

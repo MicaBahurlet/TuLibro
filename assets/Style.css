@@ -601,13 +601,36 @@ header a img{
     margin-bottom: 2rem;
 }
 
+/*----------- Mensaje Modal ------------- */
+.addModal {
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: green; /* VER si le quiero dejar este color*/
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.5s ease-out;
+    transform: translateY(200%);
+    -webkit-transform: translateY(200%);
+    -moz-transform: translateY(200%);
+    -ms-transform: translateY(200%);
+    -o-transform: translateY(200%);
+}
+
+.activeModal {
+    transform: translateY(0);
+    transition: all 0.5s ease-in;
+}
+
 
 
 /*----------- FOOTER ------------- */
 
 footer{
     display: flex;
-    bottom: 0;
     justify-content: space-around;
     align-items: center;
     background: rgba( 204, 200, 200, 0.25 );
