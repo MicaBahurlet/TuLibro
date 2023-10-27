@@ -60,6 +60,21 @@ const saveCart = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+// -------------- Inputs DE FORMULARIO ------------ //
+// -------------- Inputs DE FORMULARIO ------------ //
+
+const registerForm = document.querySelector("#contacto-form"); // me traigo el form
+const nameInput = document.querySelector("#name"); // me traigo el input name
+const emailInput = document.querySelector("#email"); // me traigo el input email
+const messageInput = document.querySelector("#mensaje"); // me traigo el input mensaje
+
+let users = [];
+
+//const formInformation = () =>{
+//    localStorage.setItem("users", JSON.stringify(users));
+//    
+//}
+  
 
 // -------------- Function para crear el html dinámico de los libros ------------ //
 // -------------- Function para crear el html dinámico de los libros ------------ //
@@ -374,6 +389,124 @@ const vaciarCarrito = () =>{
     completeCartAction ("¿Seguro queres vaciar el carrito?", "Tu carrito está vacío.");
 }
 
+
+// -------------- Validación de formulario  ------------ //
+// -------------- Validación de formulario ------------ //
+
+// Funcion para saber si el campo está vacío.
+const isEmptyInput = (input) =>{
+    return !input.value.trim().length;
+};
+
+// function ara ver si el largo del input está entre un num y el otro
+const  isBetween = (input, min, max) =>{
+    return input.value.length >= min && input.value.length <= max;
+}
+
+//regex para validar el email 
+const validateEmail = (input) => {
+  const re = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  return re.test(input.value.trim());
+};
+
+
+// function para mostrar error de validación del input
+
+const showErrorInput = (input, mensaje) =>{
+    const formField = input.parentElement;
+    formField.classList.remove("success");
+    formField.classList.add("error");
+
+    const error = formField.querySelector("small");
+    error.style.display = "block";
+    error.textContent = mensaje;
+};
+
+/// function para cuando todo está bien 
+
+const ShowSuccessInput = (input) =>{
+    const formField = input.parentElement;
+    formField.classList.remove("error");
+    formField.classList.add("success");
+
+    const error = formField.querySelector("small");
+    error.textContent = "";
+
+};
+
+
+// Function para validar el name. 
+const checkInput = (input) =>{
+    // código a checkear
+    let valid = false;
+    const MIN_CHARACTERS = 3;
+    const MAX_CHARACTERS = 25;
+    if(isEmptyInput(input)){
+        showErrorInput(input, "Este campo es obligatorio");
+        return;
+    }
+    if(!isBetween(input, MIN_CHARACTERS, MAX_CHARACTERS)){
+        showErrorInput(input, "Este campo debe tener entre 3 y 25 caracteres");
+        return;
+    }
+    ShowSuccessInput(input);
+    valid = true;
+    return valid;
+};
+
+// function para validar el e-mail
+
+const checkEmail = (input) =>{
+    let valid = false;
+    if(isEmptyInput(input)){
+        showErrorInput(input, "El e-mail es obligatorio");
+        return;
+    }
+    if(!validateEmail(input)){
+        showErrorInput(input, "E-mail no valido");
+        return;
+    }
+    ShowSuccessInput(input);
+    valid = true;
+    return valid;
+}
+
+// function para validar campo de mensaje. 
+const checkMessage = (input) =>{
+    let valid = false;
+    if(isEmptyInput(input)){
+        showErrorInput(input, "Este campo es obligatorio");
+        return;
+    }
+    ShowSuccessInput(input);
+    valid = true;
+    return valid;
+}
+
+// Function para validar formulario total 
+
+const validateForm = (e) =>{
+    e.preventDefault();
+    let nameValid = checkInput(nameInput);
+    let emailValid = checkEmail(emailInput);
+    let messageValid = checkMessage(messageInput);
+    
+    let isValidForm = nameValid && emailValid && messageValid;
+
+    if(isValidForm){
+        users.push({
+            name: nameInput.value,
+            email: emailInput.value,
+            message: messageInput.value,
+        })
+
+        alert("Mensaje enviado con exito!");
+    }
+    
+}
+
+
+
 // -------------- Function innit------------ //
 const init = () => {
     renderLibros(AppState.libros [0]);
@@ -391,6 +524,12 @@ const init = () => {
     quitarBtn (btnDelete); // ni bien cargue yo quiero deshabilitar los btn porque se supone que no tengo nada en el cart
     quitarBtn (btnComprar);
     sumarBurbuja(cart); // para que el LS me renderice también la bubble del cart
+
+    nameInput.addEventListener("input" ,() => checkInput(nameInput));
+    emailInput.addEventListener("input" ,() => checkEmail(emailInput));
+    messageInput.addEventListener("input" ,() => checkMessage(messageInput));
+    registerForm.addEventListener("submit", validateForm);
+
 };
 
 init();

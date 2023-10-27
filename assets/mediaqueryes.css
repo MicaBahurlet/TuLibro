@@ -12,14 +12,13 @@
         
     }
 
-   /* .cartIcon{
-   /*     cursor: pointer;
-   /*     width: 40px;
-   /*     display: inline-block;
-   /*     display: block;
-   /*    
-   /*     
-   /* }*/
+   .cartIcon{
+       cursor: pointer;
+       width: 40px;
+       display: inline-block;
+       display: flex; 
+
+    }
   
   
 
