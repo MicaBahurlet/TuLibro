@@ -166,6 +166,10 @@ header a img{
     background-color:#A3E0C8; //* VER COLOR*/
 }
 
+.btn-comprar:hover{
+    background-color: #00A97F;
+}
+
 .btn-delete{
     padding: 0.5rem;
     border-radius: 10px;
@@ -199,7 +203,7 @@ header a img{
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    background-color: #2323234e; /* ver éste color*/
+    background-color: whitesmoke; /* ver éste color*/
     padding: 20px;
     border: 1px solid black; 
     border-radius: 10px;
@@ -357,7 +361,7 @@ header a img{
     -o-border-radius: 10px;
 }
    
-   .button::before, .button::after {
+.button::before, .button::after {
     content: '';
     display: block;
     width: 50px;
@@ -368,30 +372,35 @@ header a img{
     z-index: -1;
     background-color: var(--color);
     transition: 1s ease;
-   }
+}
    
-   .button::before {
+.button::before {
     top: -1em;
     left: -1em;
-   }
+}
    
-   .button::after {
+.button::after {
     left: calc(100% + 1em);
     top: calc(100% + 1em);
-   }
+}
    
-   .button:hover::before, .button:hover::after {
+.button:hover::before, .button:hover::after {
     height: 410px;
     width: 410px;
-   }
+}
    
-   .button:hover {
+.button:hover {
     color: rgb(10, 25, 30);
-   }
+}
    
-   .button:active {
+.button:active {
     filter: brightness(.8);
-   }
+}
+
+.button a{
+    text-decoration: none;
+    color: black;
+}
    
 
 
@@ -406,9 +415,15 @@ header a img{
 
 #Beneficios{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     font-size: 20px;
-    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    /*text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);*/
+    width: 100%;
+    height: auto;
+    max-width: 1000px;
+    margin: 2rem auto;
+    gap: 0.5rem;
 }
 
 
@@ -417,8 +432,10 @@ header a img{
     justify-content: center;
     align-items: stretch;
     gap: 2rem;
-    margin-top: 4rem;
-    margin-bottom: 5rem;
+    margin: 2rem auto;
+    width: 100%;
+    height: auto;
+    max-width: 1000px;
 }
 
 .cards{
@@ -426,7 +443,7 @@ header a img{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #A3E0C8;
+    background-color: rgba(163, 224, 200, 0.5);
     border-radius: 10px;
     padding: 2rem;
     gap: 1rem;
@@ -434,6 +451,11 @@ header a img{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    width: 100%;
+    height: auto;
+    max-width: 20rem;
+    margin-bottom: 3rem;
+    transition: transform 0.3s;
 }
 
 .cards img{
@@ -456,7 +478,12 @@ header a img{
 }
 
 #cardsBeneficios .cards:hover{
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
 }
 
 
@@ -469,7 +496,7 @@ header a img{
     justify-content: center;
     align-items: center;
     font-size: 20px;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 #LibrosDisponibles h2{
@@ -505,6 +532,10 @@ header a img{
     background-color:#A3E0C8
 }
 
+.btnComprarLibro:hover{
+    background-color:#00A97F;
+}
+
 .btnActive{
     font-weight: 900;
     padding: 0.5rem;
@@ -531,8 +562,8 @@ header a img{
     height: auto;
     max-width: 1200px;
     gap: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     padding: 3rem;
 }
 
@@ -604,6 +635,10 @@ header a img{
     background-color:#A3E0C8/*CAMBIAR COLOR*/
 }
 
+.btnVerMas:hover{
+    background-color: #00A97F;
+}
+
 .hidden{
     display: none;
 }
@@ -652,6 +687,23 @@ header a img{
     
 }
 
+.Enviar{
+    width: 5rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    font-size: 16px;
+    font-weight: 900;
+    background-color:#A3E0C8;
+}
+
+.Enviar:hover{
+    background-color: #00A97F;
+}
+
 .form_field.error input{
     border: 1px solid red;
 }
@@ -684,7 +736,7 @@ header a img{
     align-items: center;
     justify-content: center;
     color: white;
-    background-color: green; /* VER si le quiero dejar este color*/
+    background-color: #00A97F;
     position: fixed;
     bottom: 0;
     width: 100%;

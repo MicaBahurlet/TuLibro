@@ -12,13 +12,13 @@
         
     }
 
-   .cartIcon{
+   /*.cartIcon{
        cursor: pointer;
-       width: 40px;
-       display: inline-block;
-       display: flex; 
+       /*width: 40px;
+       /*display: inline-block;
+       /*display: block;
 
-    }
+    }*/
   
   
 
@@ -78,11 +78,19 @@
         font-size: 18px;
     }
 
+    #Beneficios{
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+    }
+
+
    #cardsBeneficios{
        flex-direction: column;
        width: 100%;
        height: auto;
-       max-width: 400px;
+       max-width: 250px;
    }
 
    #cardsBeneficios .cards{
@@ -96,6 +104,8 @@
    #LibrosDisponibles{
        flex-direction: column;
    }
+
+  
 
    #LibrosDisponibles p{
     text-align: center;
@@ -119,6 +129,8 @@
     }
     footer{
         flex-direction: column;
+        margin-top: 2rem;
+        padding: 2rem;
     }
    
 }
