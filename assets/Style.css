@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Manrope', sans-serif;
+    
 }
 
 body{
@@ -20,6 +21,7 @@ header{
     background-color: #FCFAF7;
     padding: 2rem;
     z-index: 999;
+    top: 0;
     border-bottom: 2px solid black;
     -webkit-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.41);
     -moz-box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.41);
@@ -213,6 +215,8 @@ header a img{
     width: 100%;
     height: auto;
     max-width: 40px;
+    box-shadow: 5px 5px 3px 0px rgba(0,0,0,0.35);
+    
 }
   
 .item-info {
@@ -234,14 +238,7 @@ header a img{
     font-size: 16px;
 }
 
-/*.item-price {
-/*    background: linear-gradient(to right, #30cfd0, #c43ad6);
-/*    background-clip: text;
-/*    color: red;
-/*    -webkit-background-clip: text;
-/*    font-size: 16px;
-/*    font-weight: 800;
-/*}*/
+
   
 .item-handler {
     display: flex;
@@ -270,7 +267,7 @@ header a img{
 }
 
 .mas:hover{
-    background-color: #A3E0C8; /* cambiar color*/
+    background-color: #00A97F; /* cambiar color*/
 }
   
 .menos {
@@ -280,7 +277,7 @@ header a img{
 }
 
 .menos:hover{
-    background-color: #A3E0C8; /* cambiar color*/
+    background-color: #00A97F; /* cambiar color*/
 }
 
 .deshabilitar{
@@ -290,24 +287,24 @@ header a img{
     border: none;
 }
 
-/*.overlay {
-/*    position: absolute;
-/*    top: 65px;
-/*    left: 0;
-/*    height: 100vh;
-/*    width: 100%;
-/*    z-index: 1; 
-/*    /*Efecto de Glassmorphismo*/
-/*    background: rgba(255, 255, 255, 0.05);
-/*    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-/*    backdrop-filter: blur(5px);
-/*    -webkit-backdrop-filter: blur(5px);
-/*    display: none;
-/*}
-/*
-/*.show-overlay {
-/*    display: block;
-/*  }
+    /*.overlay {
+    /*    position: absolute;
+    /*    top: 65px;
+    /*    left: 0;
+    /*    height: 100vh;
+    /*    width: 100%;
+    /*    z-index: 1; 
+    /*    /*Efecto de Glassmorphismo*/
+    /*    background: rgba(255, 255, 255, 0.05);
+    /*    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /*    backdrop-filter: blur(5px);
+    /*    -webkit-backdrop-filter: blur(5px);
+    /*    display: none;
+    /*}
+    /*
+    /*.show-overlay {
+    /*    display: block;
+    /*  }
 
 /*----------- HERO ------------- */
 
@@ -426,11 +423,16 @@ header a img{
     gap: 0.5rem;
 }
 
+#Beneficios p{
+    line-height: 1.3;
+}
+
 
 #cardsBeneficios{
     display: flex;
     justify-content: center;
     align-items: stretch;
+    text-align: center;
     gap: 2rem;
     margin: 2rem auto;
     width: 100%;
@@ -484,6 +486,8 @@ header a img{
     -moz-transform: scale(1.02);
     -ms-transform: scale(1.02);
     -o-transform: scale(1.02);
+    background-color: #00A97F;
+    color: white;
 }
 
 

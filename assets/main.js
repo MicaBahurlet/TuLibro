@@ -203,7 +203,7 @@ const createCartLibroTemplate =  (cartLibro) =>{
             <img src="${img}" alt="${name}">
             <div class="item-info">
                 <h3 class="item-title">${name}</h3>
-                <p class="item-bid">$${bid}</p>
+                <p class="item-bid"> ${bid} USD</p>
             </div>
             <div class="item-handler">
             <span class="quantity-handler menos" data-id="${id}">-</span>
@@ -233,7 +233,7 @@ const getTotalCart = () => {
 
 // function para mostrar el total
 const mostrarTotal = () => {
-    total.innerHTML = `${getTotalCart().toFixed(2)} ARS`; // despues cambiar la moneda si es que quiero
+    total.innerHTML = `${getTotalCart().toFixed(2)} USD`; // despues cambiar la moneda si es que quiero
 }
 
 // function sumar en la burbuja
