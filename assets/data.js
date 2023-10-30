@@ -83,6 +83,21 @@ const librosData =[
         category: "Clásicos",
         img: "./img/ElPrincipito.png",
     },
+    {
+        id: 13,
+        name: "Platero y yo",
+        bid: 3.00,
+        category: "Clásicos",
+        img: "./img/Platero.png",
+    },
+    {
+        id: 14,
+        name: "La Caza del Carnero Salvaje",
+        bid: 5.00,
+        category: "Ficción",
+        img: "./img/Murakami.png",
+    }
+
 ]
 
 // Quiero dividir de a 4 

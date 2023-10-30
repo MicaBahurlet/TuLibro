@@ -219,7 +219,7 @@ const createCartLibroTemplate =  (cartLibro) =>{
 // render carrito
 const renderCart = () => {
     if (!cart.length){
-        librosCart.innerHTML = `<p class="emptyCart">Agregá un libro para comenzar con tu compra.</p>`;
+        librosCart.innerHTML = `<p class="emptyCart"> Por favor, agregá un libro para comenzar con tu compra.</p>`;
         return;
     }
 
