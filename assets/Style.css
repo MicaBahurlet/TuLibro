@@ -541,7 +541,9 @@ header a img{
     -o-border-radius: 10px;
     font-size: 16px;
     font-weight: 500;
-    background-color:#A3E0C8
+    background-color:#A3E0C8;
+    resize: none;
+    color: black;
 }
 
 .btnComprarLibro{
@@ -553,7 +555,9 @@ header a img{
     -o-border-radius: 10px;
     font-size: 16px;
     font-weight: 500;
-    background-color:#A3E0C8
+    background-color:#A3E0C8;
+    resize: none;
+    color: black;
 }
 
 .btnComprarLibro:hover{
