@@ -60,7 +60,7 @@
         align-items: center;
         width: 100%;
         height: auto;
-        max-width:  800px;
+        max-width:  950px;
         gap: 5px;
         margin: 2rem auto;
      }
@@ -216,7 +216,7 @@
        align-items: center;
        width: 100%;
        height: auto;
-       max-width: 400px;
+       max-width: 550px;
        gap: 2px;
        margin: 2rem auto;
     }

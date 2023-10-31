@@ -322,6 +322,8 @@ header a img{
     justify-content: space-around;
     align-items: center;
     padding: 4rem;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    
 }
 
 #Hero .textHero{
@@ -333,15 +335,18 @@ header a img{
 #Hero .textHero h1{
     font-size: 47px;
     text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    
 }
 #Hero .textHero h2{
     font-size: 30px;
     text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    
 }
 
 #Hero .textHero h3{
     font-size: 20px;
     text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    
 }
 
 .button {
@@ -355,8 +360,8 @@ header a img{
     transition: .5s;
     font-weight: 400;
     font-size: 17px;
-    border: 1px solid;
-    color: var(--color);
+    border: 1px solid black;
+    color: whitesmoke;
     z-index: 1;
     width: 100%;
     height: auto;
@@ -415,6 +420,7 @@ header a img{
     height: auto;
     max-width: 400px;
     margin-top: 4rem;
+    
 }
 
 /*----------- BENEFICIOS ------------- */
@@ -424,12 +430,17 @@ header a img{
     flex-direction: column;
     justify-content: center;
     font-size: 20px;
-    /*text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);*/
     width: 100%;
     height: auto;
     max-width: 1000px;
     margin: 2rem auto;
     gap: 0.5rem;
+}
+
+#Beneficios h3{
+    font-size: 30px;
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
 }
 
 #Beneficios p{
