@@ -14,7 +14,19 @@
     }
 
     .abrir-menu{
-        margin-left: 28rem;
+        margin-left: 15rem;
+        display: block;
+        
+    }
+
+    header{
+        gap: 3rem;
+    }
+
+    header .logo img{
+        width: 100%;
+        height: auto;
+        max-width: 150px;
     }
  
     .nav {
