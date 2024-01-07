@@ -18,7 +18,7 @@ const librosData =[
         name: "¿Quién se ha llevado mi queso?",
         bid: 5.00,
         category: "Crecimiento",
-        img: "./img/QuienSeHaLlevadoMiQueso.png"
+        img: "./img/QuienSeHaLLevadoMiQueso.png"
     },
     {
         id: 4,
