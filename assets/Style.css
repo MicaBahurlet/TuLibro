@@ -18,7 +18,7 @@ html {
 
 header{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     height: 80px;
     align-items: center; 
@@ -195,7 +195,8 @@ header a img{
     -o-border-radius: 10px;
     font-size: 16px;
     font-weight: 500;
-    background-color: whitesmoke; //* VER COLOR*/
+    background-color: whitesmoke; 
+    cursor: pointer;
 
 }
 
@@ -328,11 +329,11 @@ header a img{
     align-items: center;
     padding: 4rem;
     /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
-    background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+    /* background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%); */
 
-
-
-    
+    background-color: #CDDCDC;
+    background-image: radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
+    background-blend-mode: screen, overlay;
 
     height: 100vh;
     width: 100%;
@@ -346,18 +347,20 @@ header a img{
     flex-direction: column;
     gap: 1rem;
     
+    
 }
 
 #Hero .textHero h1{
-    font-size: 60px;
-    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
-    font-weight: 600;
+    font-size: 90px;
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    
     
 }
 #Hero .textHero h2{
-    font-size: 30px;
+    font-size: 35px;
     text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
-    font-weight: 500;
+    font-weight: 400;
     
     
 }
@@ -372,7 +375,7 @@ header a img{
 .button {
     background-color: #A3E0C8;
     padding: 5px;
-    /* background-color: transparent; */
+    
     border-radius: 10px;
     position: relative;
     overflow: hidden;
