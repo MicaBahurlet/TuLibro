@@ -2,13 +2,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Manrope', sans-serif;
+    font-family: "Poppins", sans-serif;
     
 }
 
 body{
     background-color: #FCFAF7;
     overflow-x: hidden; /* Para que no me genere un scroll horizontal el carrito.*/
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
 }
 
 header{
@@ -73,7 +78,7 @@ header a img{
 }
 
 #NavBar .navList a:hover{
-    font-weight: 900;
+    font-weight: 700;
 }
 
 
@@ -322,7 +327,17 @@ header a img{
     justify-content: space-around;
     align-items: center;
     padding: 4rem;
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
+    background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+
+
+
+    
+
+    height: 100vh;
+    width: 100%;
+    gap: 1rem;
+    color: black;
     
 }
 
@@ -330,29 +345,34 @@ header a img{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    
 }
 
 #Hero .textHero h1{
-    font-size: 47px;
+    font-size: 60px;
     text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    font-weight: 600;
     
 }
 #Hero .textHero h2{
     font-size: 30px;
-    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    
     
 }
 
 #Hero .textHero h3{
     font-size: 20px;
-    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    font-weight: 400;
+   
     
 }
 
 .button {
-    --color: #00A97F;
-    padding: 0.5rem;
-    background-color: transparent;
+    background-color: #A3E0C8;
+    padding: 5px;
+    /* background-color: transparent; */
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -360,7 +380,7 @@ header a img{
     transition: .5s;
     font-weight: 400;
     font-size: 17px;
-    border: 1px solid black;
+    border: 0.5px solid black;
     color: whitesmoke;
     z-index: 1;
     width: 100%;
@@ -370,6 +390,7 @@ header a img{
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    margin-top: 2rem;
 }
    
 .button::before, .button::after {
@@ -381,8 +402,10 @@ header a img{
     position: absolute;
     border-radius: 50%;
     z-index: -1;
-    background-color: var(--color);
+    
     transition: 1s ease;
+     background-color: #00A97F;
+   
 }
    
 .button::before {
@@ -420,6 +443,9 @@ header a img{
     height: auto;
     max-width: 400px;
     margin-top: 4rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+
+    
     
 }
 
@@ -438,8 +464,8 @@ header a img{
 }
 
 #Beneficios h3{
-    font-size: 30px;
-    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    font-size: 35px;
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
 }
 
@@ -544,6 +570,7 @@ header a img{
     background-color:#A3E0C8;
     resize: none;
     color: black;
+    cursor: pointer;
 }
 
 .btnComprarLibro{
@@ -558,6 +585,7 @@ header a img{
     background-color:#A3E0C8;
     resize: none;
     color: black;
+    border: 0.5px solid black;
 }
 
 .btnComprarLibro:hover{
@@ -635,10 +663,11 @@ header a img{
     text-align: center;
     font-size: 19px;
     line-height: 1.2;
-    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
     width: 100%;
     height: auto;
     max-width: 11rem;
+    font-weight: 300;
 }
 
 /*----------- BTN - VER MÁS------------- */
@@ -659,7 +688,7 @@ header a img{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     font-size: 16px;
-    font-weight: 900;
+    font-weight: 600;
     background-color:#A3E0C8/*CAMBIAR COLOR*/
 }
 
@@ -717,15 +746,19 @@ header a img{
 
 .Enviar{
     width: 5rem;
-    padding: 0.8rem;
+    padding: 5px;
     border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     font-size: 16px;
-    font-weight: 900;
+    font-weight: 600;
     background-color:#A3E0C8;
+    border: 0.5px solid black;
 }
 
 .Enviar:hover{

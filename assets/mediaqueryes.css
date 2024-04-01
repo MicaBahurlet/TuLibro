@@ -237,7 +237,7 @@
        width: 100%;
        height: auto;
        max-width: 350px;
-       text-align: center;
+       text-align: start;
        align-items: center;
     }
 
@@ -274,7 +274,7 @@
     }
 
     #Beneficios, h3, p{
-        text-align: center;
+        text-align: start;
         width: 100%;
         height: auto;
         max-width: 350px;
@@ -288,6 +288,8 @@
        width: 100%;
        height: auto;
        max-width: 250px;
+       justify-content: center;
+       align-items: center;
    }
 
    #cardsBeneficios .cards{
