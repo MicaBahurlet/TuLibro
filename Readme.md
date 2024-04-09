@@ -11,4 +11,4 @@ Este proyecto lo presenté como trabajo integrador del módulo de JavaScript per
 </p> 
 
 <strong align="start">	&#128073; Deploy:</strong> 
- https://tu-libro-aw6iclknu-micabahurlet.vercel.app/
+https://tu-libro.vercel.app/
